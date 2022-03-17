@@ -110,6 +110,7 @@
   position: absolute;
   margin-top: 50px;
   margin-left: 200px;
+  display: none;
 }
 
 .counter{
@@ -120,9 +121,25 @@
   margin-top: 50px;
   display: flex;
   align-items: center;
-  justify-content: center;}
+  justify-content: center;
+}
 #counter{
   font-size: 50px;
+  color: red;
+}
+.message{
+  width: 300px;
+  height: 100px;
+  background-color: skyblue;
+  position: absolute;
+  margin-top: 150px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#message{
+  font-size: 40px;
   color: red;
 }
 
