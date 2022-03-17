@@ -47,13 +47,13 @@
   bottom:50px;
 }
 .circlecontainer{
-  width: 10px;
+  width: 240px;
   height: 250px;
   background-color: antiquewhite;
   position: absolute;
   
   left:50%;
-  margin-left: -5px;
+  margin-left: -120px;
   bottom: 50px;
   opacity: .3;
   display: flex;
@@ -103,12 +103,28 @@
 
 }
 
-.placeholder{
+.place{
   width: 300px;
   height: 100px;
   background-color: rgb(156, 30, 30);
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 200px;
 }
 
+.counter{
+  width: 150px;
+  height: 70px;
+  background-color: rgb(156, 102, 102);
+  position: absolute;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;}
+#counter{
+  font-size: 50px;
+  color: red;
+}
 
 
 .test{
