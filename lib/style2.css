@@ -1,0 +1,166 @@
+
+
+.container{
+  width: 750px;
+  height: 300px;
+  background-color: aliceblue;
+  display: flex;
+  position: relative;
+  left: 200px;
+  top:200px;
+}
+
+.subcontainer{
+  width: 250px;
+  height: 300px;
+  background-color: aqua;
+}
+
+.leftcontainer{
+  background-color: rgb(228, 200, 44);
+  position: relative;
+}
+.middlecontainer{
+  background-color: aquamarine;
+  position: relative;
+}
+.rightcontainer{
+  background-color: blue;
+  position: relative;
+}
+.bottom{
+  width: 200px;
+  height: 50px;
+  background-color: darkgoldenrod;
+  position: absolute;
+  left:50%;
+  margin-left:-100px;
+  bottom: 0;
+}
+.sticker{
+  width: 20px;
+  height: 200px;
+  background-color: chartreuse;
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  bottom:50px;
+}
+.circlecontainer{
+  width: 10px;
+  height: 250px;
+  background-color: antiquewhite;
+  position: absolute;
+  
+  left:50%;
+  margin-left: -5px;
+  bottom: 50px;
+  opacity: .3;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+}
+.layer{
+  border-radius: 10px;
+  /* position: absolute; */
+  /* z-index: 0; */
+}
+.leftlayerone{
+  width: 180px;
+  height: 30px;
+  background-color: chocolate;
+
+}
+.leftlayertwo{
+  width: 150px;
+  height: 30px;
+  background-color: rgb(163, 111, 73);
+
+}
+.leftlayerthree{
+  width: 120px;
+  height: 30px;
+  background-color: rgb(17, 88, 219);
+
+}
+.leftlayerfour{
+  width: 90px;
+  height: 30px;
+  background-color: rgb(143, 12, 121);
+
+}
+.leftlayerfive{
+  width: 60px;
+  height: 30px;
+  background-color: rgb(35, 116, 71);
+
+}
+.leftlayersix{
+  width: 30px;
+  height: 30px;
+  background-color: rgb(59, 111, 141);
+
+}
+.test{
+  width: 100px;
+  height: 100px;
+  margin:5px 5px;
+  background-color: green;
+  display: block;
+  z-index: -1;
+}
+.test1-1{
+  width: 80px;
+  height: 80px;
+  background-color: pink;
+  display: block;
+  z-index: 0;
+  /* visibility: hidden; */
+}
+.test1-1-1{
+  width: 60px;
+  height: 60px;
+  background-color: rgb(55, 23, 170);
+  position: relative;
+  z-index: 1;
+  display: block;
+
+}
+.button1{
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+}
+.button3{
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: bisque;
+  
+  position: absolute;
+  z-index: 0;
+  left:0;
+  top:0;
+  
+}
+.button4{
+  width: 150px;
+  height: 150px;
+  background-color: blueviolet;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+.button5{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 2;
+  left:0;
+  top:0;
+}
