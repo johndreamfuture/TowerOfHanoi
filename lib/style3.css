@@ -1,0 +1,71 @@
+
+.bigcontainer{
+  width: 1300px;
+  height: 300px;
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+  
+}
+.container{
+  width: 400px;
+  height: 300px;
+  display: flex;
+}
+.container1{
+  
+  background-color: pink;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-items: center;
+}
+.container2{
+  background-color: rgb(214, 192, 255);
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.container3{
+  background-color: rgb(192, 255, 218);
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.level{
+  width: 400px;
+  height: 50px;
+  background-color: beige;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-6{
+  width: 50px;
+  height: 30px;
+  background-color: rgb(176, 223, 223);
+}
+.button-5{
+  width: 90px;
+  height: 30px;
+  background-color: rgb(156, 137, 97);
+}
+.button-4{
+  width: 130px;
+  height: 30px;
+  background-color: rgb(24, 172, 98);
+}
+.button-3{
+  width: 170px;
+  height: 30px;
+  background-color: rgb(81, 21, 177);
+}
+.button-2{
+  width: 210px;
+  height: 30px;
+  background-color: rgb(199, 53, 204);
+}
+.button-1{
+  width: 250px;
+  height: 30px;
+  background-color: rgba(255, 81, 0, 0.685);
+}
