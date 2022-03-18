@@ -37,6 +37,31 @@
   background-color: beige;
   display: flex;
   justify-content: space-around;
+  margin-left: 20px;
+}
+#showlevels{
+  width:100px ;
+  height: 50px;
+  font-size: 30px;
+  background-color: rgb(255, 196, 228);
+}
+.placeholder{
+  width: 400px;
+  height: 50px;
+  background-color: rgb(42, 146, 111);
+  margin-left: 425px;
+}
+.counter{
+  width: 400px;
+  height: 50px;
+  background-color: rgb(102, 16, 184);
+  margin-left: 20px;
+}
+.message{
+  width: 400px;
+  height: 50px;
+  background-color: rgb(148, 21, 53);
+  margin-left: 20px;
 }
 
 .button-6{
