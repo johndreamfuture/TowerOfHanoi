@@ -19,16 +19,19 @@
   flex-direction: column-reverse;
   align-items: center;
   justify-items: center;
+  pointer-events: none;
 }
 .container2{
   background-color: rgb(214, 192, 255);
   flex-direction: column-reverse;
   align-items: center;
+  pointer-events: none;
 }
 .container3{
   background-color: rgb(192, 255, 218);
   flex-direction: column-reverse;
   align-items: center;
+  pointer-events: none;
 }
 
 .level{
@@ -45,6 +48,9 @@
   font-size: 30px;
   background-color: rgb(255, 196, 228);
 }
+#leveldown{
+  cursor: grab;
+}
 .placeholder{
   width: 400px;
   height: 50px;
@@ -55,42 +61,113 @@
   width: 400px;
   height: 50px;
   background-color: rgb(102, 16, 184);
-  margin-left: 20px;
+  margin-left: 425px;
+  margin-top: 2px;
+  
+}
+#counter{
+  font-size: 40px;
+  color: red;
+  text-align: center;
+  margin: 10px auto;
 }
 .message{
   width: 400px;
   height: 50px;
   background-color: rgb(148, 21, 53);
-  margin-left: 20px;
+  margin-left: 425px;
+  margin-top: 2px;
+  text-align:center;
+  font-size: 40px;
+  color: red;
+  
 }
+#message{
+  margin: 10px auto;
+}
+#start{
+  width: 100px;
+  height: 80px;
+  background-color: aquamarine;
+  position: absolute;
+  top:400px;
+  left:180px;
+  border-radius: 40px;
+  font-size: 20px;
+}
+#reset{
+  width: 100px;
+  height: 80px;
+  background-color: rgb(241, 41, 19);
+  position: absolute;
+  top:500px;
+  left:180px;
+  border-radius: 40px;
+  font-size: 20px;
+}
+
 
 .button-6{
   width: 50px;
   height: 30px;
   background-color: rgb(176, 223, 223);
+  border-radius: 10px;
 }
 .button-5{
   width: 90px;
   height: 30px;
   background-color: rgb(156, 137, 97);
+  border-radius: 10px;
 }
 .button-4{
   width: 130px;
   height: 30px;
   background-color: rgb(24, 172, 98);
+  border-radius: 10px;
 }
 .button-3{
   width: 170px;
   height: 30px;
   background-color: rgb(81, 21, 177);
+  border-radius: 10px;
 }
 .button-2{
   width: 210px;
   height: 30px;
   background-color: rgb(199, 53, 204);
+  border-radius: 10px;
 }
 .button-1{
   width: 250px;
   height: 30px;
   background-color: rgba(255, 81, 0, 0.685);
+  border-radius: 10px;
+}
+
+.leftsticker{
+  width: 20px;
+  height: 260px;
+  background-color: chartreuse;
+  position: absolute;
+  top:60px;
+  left:220px;
+  opacity: .5;
+}
+.middlesticker{
+  width: 20px;
+  height: 260px;
+  background-color: chartreuse;
+  position: absolute;
+  top:60px;
+  left:620px;
+  opacity: .5;
+}
+.rightsticker{
+  width: 20px;
+  height: 260px;
+  background-color: chartreuse;
+  position: absolute;
+  top:60px;
+  left:1020px;
+  opacity: .5;
 }
