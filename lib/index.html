@@ -5,40 +5,51 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tower Of Hanoi</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="style3.css">
 </head>
 
 <body>
-
-  <div class="container">
-    <div class="sticker div1">div1
-      <div class="pan a a1" data-name="A1">A1</div>
-      <div class="pan b b1" data-name="B1">B1</div>
-      <div class="pan c c1" data-name="C1">C1</div>
-      <div class="up">div1-1</div>
-      <div class="bottom">div1-2</div>
+  <div class="bigcontainer">
+    <div class="container container1" id="container1">
+      <button class="button-1" data-weight="90">1</button>
+      <button class="button-2" data-weight="80">2</button>
     </div>
+    <div class="container container2" id="container2">
 
-    <div class="sticker div2">div2
-      <div class="pan a a2" data-name="A2">A2</div>
-      <div class="pan b b2" data-name="B2">B2</div>
-      <div class="pan c c2" data-name="C2">C2</div>
-
-      <div class="up">div2-1</div>
-      <div class="bottom">div2-2</div>
     </div>
+    <div class="container container3" id="container3">
 
-    <div class="sticker div3">div3
-      <div class="pan a a3" data-name="A3">A3</div>
-      <div class="pan b b3" data-name="B3">B3</div>
-      <div class="pan c c3" data-name="C3">C3</div>
-      <div class="up">div3-1</div>
-      <div class="bottom">div3-2</div>
     </div>
+  </div>
+
+  <div class="level">
+    <button class="decrease" id="leveldown">level-</button>
+    <button class="showlevels" id="showlevels">2</button>
+
+    <button class="increase" id="levelup">level+</button>
+  </div>
+  <div class="placeholder" id="placeholder">
 
   </div>
-  <script src="script.js"></script>
+  <div class="counter">
+    <p id="counter"></p>
+  </div>
+  <div class="message">
+    <p id="message"></p>
+  </div>
+  <div class="start">
+    <button id="start">start game</button>
+  </div>
+  <div class="reset">
+    <button id="reset">reset game</button>
+  </div>
+  <div class="sticker leftsticker"></div>
+  <div class="sticker middlesticker"></div>
+  <div class="sticker rightsticker"></div>
+
+
+  <script src="script3.js"></script>
 </body>
 
 </html>
