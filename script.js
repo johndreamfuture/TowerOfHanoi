@@ -1,98 +1,238 @@
-
-//creat a div  with the class named container.
-let container = document.createElement("div")
-container.classList.add("container")
-document.body.appendChild(container)
-//creat a div for show bigger picture and details
-let bigBox = document.createElement("div")
-bigBox.classList.add("bigBox")
-container.appendChild(bigBox)
-//left box and big img
-let bigBoxLeft = document.createElement("div")
-bigBoxLeft.classList.add("bigBoxLeft")
-let bigImg = document.createElement("img")
-bigImg.classList.add("bigImg")
-bigBoxLeft.appendChild(bigImg)
-
-//right box for description
-let bigBoxRight = document.createElement("div")
-bigBoxRight.classList.add("bigBoxRight")
-let description = document.createElement("p")
-description.classList.add("description")
-bigBoxRight.append(description)
-bigBox.appendChild(bigBoxLeft)
-bigBox.appendChild(bigBoxRight)
-
-let cornerBox = document.createElement("div")
-cornerBox.classList.add("cornerBox")
-let close = document.createElement("h2")
-close.classList.add("close")
-close.innerText = "X"
-cornerBox.appendChild(close)
-bigBox.appendChild(cornerBox)
-
-let slideLeftBox = document.createElement("div")
-slideLeftBox.classList.add("slideLeftBox")
-let moveLeft = document.createElement("h1")
-moveLeft.classList.add("moveLeft")
-moveLeft.innerText = "<"
-slideLeftBox.appendChild(moveLeft)
-bigBox.appendChild(slideLeftBox)
-
-let slideRightBox = document.createElement("div")
-slideRightBox.classList.add("slideRightBox")
-let moveRight = document.createElement("h1")
-moveRight.classList.add("moveRight")
-moveRight.innerHTML = "&nbsp;&nbsp>"
-slideRightBox.appendChild(moveRight)
-bigBox.appendChild(slideRightBox)
-
-// get a random picture for put in each box.
-let url = "https://zoo-animal-api.herokuapp.com/animals/rand"
-
-let smallBox = [] //["smallBox-1", "smallBox-2", "smallBox-3", "smallBox-4", "smallBox-5", "smallBox-6", "smallBox-7", "smallBox-8", "smallBox-9", "smallBox-10", "smallBox-11", "smallBox-12", "smallBox-13", "smallBox-14", "smallBox-15", "smallBox-16", "smallBox-17", "smallBox-18"]
-let smallImg = []
-
-for (let i = 0; i < 18; i++) {
-  smallBox[i] = document.createElement("div")
-  smallBox[i].classList.add("smallBox")
-  smallImg[i] = document.createElement("img")
-  smallImg[i].classList.add("smallImg")
-  smallBox[i].appendChild(smallImg[i])
-  container.appendChild(smallBox[i])
-
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-
-      //console.log(data)
-      smallImg[i].src = data.image_link
-
-      smallImg[i].addEventListener("click", (e) => {
-        e.preventDefault()
-        bigImg.src = smallImg[i].src
-        description.innerHTML = `<b>Welcome!Human friends. I would like to introduce myself to you!</b><br><br> 
-        Active time:${data["active_time"]},<br>
-        Animal type:${data["animal_type"]},<br>
-        Diet:${data["diet"]},<br>
-        Geo_range:${data["geo_range"]},<br>
-        Habitat:${data["habitat"]},<br>
-        Id:${data["id"]},<br>
-        Latin name:${data["latin_name"]},<br>
-        Lifespan:${data["lifespan"]},<br>
-        Weight max:${data["weight_max"]},<br>
-        Weight min:${data["weight_min"]}`
-        bigBox.style.display = "block"
+//buitl up the levels
+let container1 = document.getElementById("container1")
+let container2 = document.getElementById("container2")
+let container3 = document.getElementById("container3")
+let placeholder = document.getElementById("placeholder")
+let levels = 2;
+let weight = 70;
+let num = 0;
 
 
+let leveldown = document.querySelector("#leveldown")
+let levelup = document.querySelector("#levelup")
+let showlevels = document.querySelector("#showlevels")
+let counter = document.querySelector("#counter")
+let message = document.querySelector("#message")
 
-      })
+leveldown.addEventListener("click", decreaseLevel)
+levelup.addEventListener("click", increaseLevel)
 
-    })
+function decreaseLevel() {
+  if (levels > 2) {
+    levels--;
+    showlevels.innerHTML = levels
+    container1.removeChild(container1.lastElementChild)
+
+  }
+}
+function increaseLevel() {
+  if (levels < 6) {
+
+    levels++
+    showlevels.innerHTML = levels
+
+    let button = document.createElement("button")
+    let className = `button-${levels}`
+
+    button.classList.add("class", className)
+
+    button.setAttribute("data-weight", weight)
+    button.innerHTML = `${levels}`
+    container1.appendChild(button)
+    weight -= 5;
+  }
 }
 
-cornerBox.addEventListener("click", (e) => {
-  e.preventDefault()
-  bigBox.style.display = "none"
-})
+let start = document.querySelector("#start")
+start.addEventListener("click", startGame)
 
+function startGame() {
+  leveldown.disabled = true;
+  levelup.disabled = true;
+  container1.style.pointerEvents = "auto"
+  container2.style.pointerEvents = "auto"
+  container3.style.pointerEvents = "auto"
+}
+
+let reset = document.querySelector("#reset")
+
+reset.addEventListener("click", resetGame)
+
+function resetGame() {
+  leveldown.disabled = false;
+  levelup.disabled = false;
+  num = 0;
+  counter.innerHTML = 0;
+  message.innerHTML = " ";
+  showlevels.innerHTML = container1.childElementCount;
+  if (placeholder.childElementCount === 1) {
+    placeholder.removeChild(placeholder.lastElementChild)
+  }
+
+  //clear container1 ElementChild
+  // console.log(container1.childElementCount)
+  // console.log(container1.childNodes)//include many
+  // console.log(container1.childNodes[0])//include many
+
+  // while (container1.childElementCount > 2) {
+  //   console.log(container1.childElementCount)
+  //   container1.remove(container1.lastElementChild)
+
+  // }
+  for (let i = container1.childElementCount; i > 2; i--) {
+    // console.log(container1.lastElementChild)
+    // container1.remove(container1.lastElementChild)//remove()?
+    container1.removeChild(container1.lastElementChild)
+    levels--
+  }
+
+  //clear container2 ElementChild
+  for (let i = container2.childElementCount; i > 0; i--) {
+    // console.log(container2.lastElementChild)
+    // container1.remove(container1.lastElementChild)//remove()?
+    container2.removeChild(container2.lastElementChild)
+    levels--
+    container2.style.pointerEvents = "auto"
+  }
+  //clear container3 ElementChild
+  for (let i = container3.childElementCount; i > 0; i--) {
+    // console.log(container3.lastElementChild)
+    // container1.remove(container1.lastElementChild)//remove()?
+    container3.removeChild(container3.lastElementChild)
+    levels--
+    container3.style.pointerEvents = "auto"
+
+  }
+}
+
+container1.addEventListener("click", move1)
+container2.addEventListener("click", move2)
+container3.addEventListener("click", move3)
+
+
+
+function move1() {
+  if (placeholder.children.length === 1) {
+    // console.log(placeholder.children)
+    drop1()
+  } else {
+    lift1()
+
+  }
+
+}
+
+
+
+
+function drop1() {
+  // // console.log("drop")
+  // console.log(placeholder.lastElementChild.dataset.weight)
+  // console.log(container1.lastElementChild.dataset.weight)
+  if (container1.children.length === 0) {
+    container1.appendChild(placeholder.lastElementChild)
+    num++
+    counter.innerHTML = `<b>steps:</b>&nbsp${num}`
+  } else {
+    if (placeholder.lastElementChild.dataset.weight < container1.lastElementChild.dataset.weight) {
+      container1.appendChild(placeholder.lastElementChild)
+      num++
+      counter.innerHTML = `<b>steps:</b>&nbsp${num}`
+    }
+  }
+
+
+}
+function lift1() {
+  // console.log("lift")
+  if (container1.children.length !== 0) {
+    placeholder.appendChild(container1.lastElementChild)
+  }
+}
+//
+function move2() {
+  if (placeholder.children.length === 1) {
+    // console.log(placeholder.children)
+    drop2()
+  } else {
+    lift2()
+
+  }
+
+}
+function drop2() {
+  // console.log("drop")
+  if (container2.children.length === 0) {
+    container2.appendChild(placeholder.lastElementChild)
+    num++
+    counter.innerHTML = `<b>steps:</b>&nbsp${num}`
+  } else {
+    if (placeholder.lastElementChild.dataset.weight < container2.lastElementChild.dataset.weight) {
+      container2.appendChild(placeholder.lastElementChild)
+      num++
+      counter.innerHTML = `<b>steps:</b>&nbsp${num}`
+    }
+  }
+
+  if (container2.children.length === levels) {
+    message.innerHTML = "Great job!"
+    container2.style.pointerEvents = "none"
+    container1.style.pointerEvents = "none"
+    container3.style.pointerEvents = "none"
+    leveldown.disabled = true;
+    levelup.disabled = true;
+
+
+  }
+
+
+}
+function lift2() {
+  // console.log("lift")
+  if (container2.children.length !== 0) {
+    placeholder.appendChild(container2.lastElementChild)
+  }
+}
+//
+function move3() {
+  if (placeholder.children.length === 1) {
+    // console.log(placeholder.children)
+    drop3()
+  } else {
+    lift3()
+
+  }
+
+}
+function drop3() {
+  // console.log("drop")
+  if (container3.children.length === 0) {
+    container3.appendChild(placeholder.lastElementChild)
+    num++
+    counter.innerHTML = `<b>steps:</b>&nbsp${num}`
+  } else {
+    if (placeholder.lastElementChild.dataset.weight < container3.lastElementChild.dataset.weight) {
+      container3.appendChild(placeholder.lastElementChild)
+      num++
+      counter.innerHTML = `<b>steps:</b>&nbsp${num}`
+    }
+  }
+  if (container3.children.length === levels) {
+    message.innerHTML = "Great job!"
+    container3.style.pointerEvents = "none"
+    container2.style.pointerEvents = "none"
+    container1.style.pointerEvents = "none"
+    leveldown.disabled = true
+    levelup.disabled = true
+
+
+  }
+
+
+}
+function lift3() {
+  // console.log("lift")
+  if (container3.children.length !== 0) {
+    placeholder.appendChild(container3.lastElementChild)
+  }
+}
