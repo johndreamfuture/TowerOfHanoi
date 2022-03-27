@@ -1,4 +1,4 @@
-//buitl up the levels
+//buit up the containers
 let container1 = document.getElementById("container1")
 let container2 = document.getElementById("container2")
 let container3 = document.getElementById("container3")
@@ -69,35 +69,23 @@ function resetGame() {
     placeholder.removeChild(placeholder.lastElementChild)
   }
 
-  //clear container1 ElementChild
-  // console.log(container1.childElementCount)
-  // console.log(container1.childNodes)//include many
-  // console.log(container1.childNodes[0])//include many
-
-  // while (container1.childElementCount > 2) {
-  //   console.log(container1.childElementCount)
-  //   container1.remove(container1.lastElementChild)
-
-  // }
+  
   for (let i = container1.childElementCount; i > 2; i--) {
-    // console.log(container1.lastElementChild)
-    // container1.remove(container1.lastElementChild)//remove()?
+ 
     container1.removeChild(container1.lastElementChild)
     levels--
   }
 
   //clear container2 ElementChild
   for (let i = container2.childElementCount; i > 0; i--) {
-    // console.log(container2.lastElementChild)
-    // container1.remove(container1.lastElementChild)//remove()?
+    
     container2.removeChild(container2.lastElementChild)
     levels--
     container2.style.pointerEvents = "auto"
   }
   //clear container3 ElementChild
   for (let i = container3.childElementCount; i > 0; i--) {
-    // console.log(container3.lastElementChild)
-    // container1.remove(container1.lastElementChild)//remove()?
+    
     container3.removeChild(container3.lastElementChild)
     levels--
     container3.style.pointerEvents = "auto"
@@ -113,7 +101,7 @@ container3.addEventListener("click", move3)
 
 function move1() {
   if (placeholder.children.length === 1) {
-    // console.log(placeholder.children)
+    
     drop1()
   } else {
     lift1()
@@ -126,9 +114,7 @@ function move1() {
 
 
 function drop1() {
-  // // console.log("drop")
-  // console.log(placeholder.lastElementChild.dataset.weight)
-  // console.log(container1.lastElementChild.dataset.weight)
+ 
   if (container1.children.length === 0) {
     container1.appendChild(placeholder.lastElementChild)
     num++
@@ -144,7 +130,7 @@ function drop1() {
 
 }
 function lift1() {
-  // console.log("lift")
+  
   if (container1.children.length !== 0) {
     placeholder.appendChild(container1.lastElementChild)
   }
@@ -152,7 +138,7 @@ function lift1() {
 //
 function move2() {
   if (placeholder.children.length === 1) {
-    // console.log(placeholder.children)
+    
     drop2()
   } else {
     lift2()
@@ -161,7 +147,7 @@ function move2() {
 
 }
 function drop2() {
-  // console.log("drop")
+  
   if (container2.children.length === 0) {
     container2.appendChild(placeholder.lastElementChild)
     num++
@@ -188,7 +174,7 @@ function drop2() {
 
 }
 function lift2() {
-  // console.log("lift")
+  
   if (container2.children.length !== 0) {
     placeholder.appendChild(container2.lastElementChild)
   }
@@ -196,7 +182,7 @@ function lift2() {
 //
 function move3() {
   if (placeholder.children.length === 1) {
-    // console.log(placeholder.children)
+    
     drop3()
   } else {
     lift3()
@@ -205,7 +191,7 @@ function move3() {
 
 }
 function drop3() {
-  // console.log("drop")
+  
   if (container3.children.length === 0) {
     container3.appendChild(placeholder.lastElementChild)
     num++
@@ -231,7 +217,7 @@ function drop3() {
 
 }
 function lift3() {
-  // console.log("lift")
+  
   if (container3.children.length !== 0) {
     placeholder.appendChild(container3.lastElementChild)
   }
